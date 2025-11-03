@@ -1,48 +1,44 @@
-/* ./app/globals.css */
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Configuration des thèmes
-  Nous utilisons :root comme thème "Tech" par défaut 
-  pour la landing page principale.
-*/
-
-:root,
 .theme-tech {
-  /* Arrière-plans */
   --bg-default: #4c489d;
   --bg-paper: #28254c;
-
-  /* Accents */
   --accent: #ffdc00;
-
-  /* Textes */
   --text-primary: #d0faff;
   --text-secondary: #ffffff;
   --text-button: #4c489d;
 }
 
+/*
+  SECTION 3 : VALEURS DU THÈME ALTERNATIF (EXPLORE)
+  (Votre code, qui est parfait)
+*/
 .theme-explore {
-  /* Arrière-plans */
   --bg-default: #d0faff;
   --bg-paper: #77c3cc;
-
-  /* Accents */
   --accent: #c12f62;
-
-  /* Textes */
   --text-primary: #004b9c;
   --text-secondary: #000000;
   --text-button: #d0faff;
 }
 
-/* Configuration globale du body
-  Assure une transition douce lors des changements de couleur
-*/
+@theme inline {
+  --color-background: var(--bg-default);
+  --color-paper: var(--bg-paper);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-button: var(--text-button);
+
+  --font-displayTech: var(--font-space-grotesk);
+  --font-displayExplore: var(--font-playfair);
+}
+
+/* 4. Configuration globale du body */
 body {
-  background-color: var(--bg-default);
-  color: var(--text-primary);
+  /* On utilise les nouvelles couleurs V4 qui pointent vers nos variables */
+  background-color: var(--color-background);
+  color: var(--color-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-inter), sans-serif;
 }
