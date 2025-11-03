@@ -7,6 +7,11 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["var(--font-inter)", "sans-serif"],
+      displayTech: ["var(--font-space-grotesk)", "sans-serif"],
+      displayExplore: ["var(--font-playfair)", "serif"],
+    },
     extend: {
       colors: {
         background: "var(--bg-default)",
@@ -18,7 +23,6 @@ const config: Config = {
           button: "var(--text-button)", // Couleur spécifique pour le texte des boutons
         },
       },
-      // Nous laissons les autres extensions (comme 'backgroundImage') ici pour le moment
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
