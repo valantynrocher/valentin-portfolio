@@ -9,18 +9,16 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-// Configuration de la police "Tech" (Space Grotesk)
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-space-grotesk",
+  variable: "--font-space-grotesk", // Variable pour 'Tech'
 });
 
-// Configuration de la police "Explore" (Playfair Display)
 const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
+  variable: "--font-playfair", // Variable pour 'Explore'
 });
 
 export const metadata: Metadata = {
@@ -36,10 +34,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      {/* On applique juste la variable --font-inter.
+        La classe "font-sans" sera appliquée par défaut par Tailwind v4 
+        grâce à notre @theme dans globals.css
+      */}
       <body
-        className={`${inter.className} ${spaceGrotesk.variable} ${playfair.variable}`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${playfair.variable}`}
       >
-        {" "}
         {children}
       </body>
     </html>
