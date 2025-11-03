@@ -1,26 +1,48 @@
-@import "tailwindcss";
+/* ./app/globals.css */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Configuration des thèmes
+  Nous utilisons :root comme thème "Tech" par défaut 
+  pour la landing page principale.
+*/
+
+:root,
+.theme-tech {
+  /* Arrière-plans */
+  --bg-default: #4c489d;
+  --bg-paper: #28254c;
+
+  /* Accents */
+  --accent: #ffdc00;
+
+  /* Textes */
+  --text-primary: #d0faff;
+  --text-secondary: #ffffff;
+  --text-button: #4c489d;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.theme-explore {
+  /* Arrière-plans */
+  --bg-default: #d0faff;
+  --bg-paper: #77c3cc;
+
+  /* Accents */
+  --accent: #c12f62;
+
+  /* Textes */
+  --text-primary: #004b9c;
+  --text-secondary: #000000;
+  --text-button: #d0faff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Configuration globale du body
+  Assure une transition douce lors des changements de couleur
+*/
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-default);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
