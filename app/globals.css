@@ -9,15 +9,11 @@
   --text-button: #4c489d;
 }
 
-/*
-  SECTION 3 : VALEURS DU THÈME ALTERNATIF (EXPLORE)
-  (Votre code, qui est parfait)
-*/
 .theme-explore {
   --bg-default: #d0faff;
   --bg-paper: #77c3cc;
   --accent: #c12f62;
-  --text-primary: #004b9c;
+  --text-primary: #4c489d; /* bleu #004b9c; */
   --text-secondary: #000000;
   --text-button: #d0faff;
 }
@@ -34,11 +30,18 @@
   --font-displayExplore: var(--font-playfair);
 }
 
-/* 4. Configuration globale du body */
 body {
-  /* On utilise les nouvelles couleurs V4 qui pointent vers nos variables */
   background-color: var(--color-background);
   color: var(--color-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: var(--font-inter), sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

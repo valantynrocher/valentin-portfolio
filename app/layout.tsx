@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-// Configuration de la police par défaut (Inter)
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -12,13 +11,13 @@ const inter = Inter({
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-space-grotesk", // Variable pour 'Tech'
+  variable: "--font-space-grotesk",
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair", // Variable pour 'Explore'
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -33,13 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      {/* On applique juste la variable --font-inter.
-        La classe "font-sans" sera appliquée par défaut par Tailwind v4 
-        grâce à notre @theme dans globals.css
-      */}
+    <html lang="fr" className="h-full overflow-hidden">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${playfair.variable}`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${playfair.variable} h-full overflow-hidden`}
       >
         {children}
       </body>
