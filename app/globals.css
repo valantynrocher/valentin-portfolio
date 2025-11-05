@@ -22,6 +22,18 @@
   --font-title: var(--font-explore);
 }
 
+@theme {
+  @keyframes swing {
+    0%,
+    100% {
+      transform: rotate(-20deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+  }
+}
+
 @theme inline {
   --color-background: var(--bg-default);
   --color-paper: var(--bg-paper);
@@ -31,6 +43,7 @@
   --color-button: var(--text-button);
   --font-button: var(--font-button);
   --font-title: var(--font-title);
+  --animate-swing: swing 1s ease-in-out infinite;
 }
 
 body {

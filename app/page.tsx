@@ -4,7 +4,12 @@ import valentinPortrait from "@/public/valentin-portrait.png";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { MdEmail, MdHandshake, MdOutlineExplore } from "react-icons/md";
+import {
+  MdEmail,
+  MdHandshake,
+  MdOutlineExplore,
+  MdSwipe,
+} from "react-icons/md";
 
 const Logo = ({ className = "" }: { className?: string }) => (
   <h2
@@ -210,6 +215,10 @@ const Home = () => {
           </div>
         </section>
       </main>
+
+      <div className="lg:hidden absolute bottom-[10%] left-1/2 -translate-x-1/2 z-30 animate-swing origin-bottom text-paper">
+        <MdSwipe className="" />
+      </div>
 
       <Popup message={popupMessage} onClose={handleClosePopup} />
     </div>
