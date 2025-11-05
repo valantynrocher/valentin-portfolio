@@ -2,6 +2,7 @@
 import { Popup } from "@/components/Popup";
 import valentinPortrait from "@/public/valentin-portrait.png";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
@@ -119,7 +120,7 @@ const Home = () => {
       }`}
     >
       {/* Fixed Overlay */}
-      <div className="lg:hidden pointer-events-none absolute inset-0 z-20 flex flex-col p-14 pb-30">
+      <header className="lg:hidden pointer-events-none absolute inset-0 z-20 flex flex-col p-14 pb-30">
         <div className="flex w-full items-center justify-between">
           <Logo />
           <ExternalLinks
@@ -139,7 +140,7 @@ const Home = () => {
             className="w-auto h-full absolute w-auto left-0 right-0 bottom-[-8%] mx-auto"
           />
         </div>
-      </div>
+      </header>
 
       {/* Background Image */}
       <div className="pointer-events-none absolute bottom-0 h-full z-10 w-full overflow-hidden hidden lg:block">
@@ -168,17 +169,13 @@ const Home = () => {
               Je transforme des problèmatiques métiers en gain de temps et de
               fiabilité.
             </p>
-            <button
-              onClick={() =>
-                handleButtonClick(
-                  "Le contenu pour Travailler ensemble arrive bientôt !"
-                )
-              }
+            <Link
               className="mt-4 px-4 py-2 lg:px-6 lg:py-3 bg-accent font-button text-button text-xs lg:text-sm font-bold flex items-center gap-2 cursor-pointer"
+              href="/dev"
             >
               <MdHandshake size={24} className="lg:size-[30px]" />
               travailler ensemble
-            </button>
+            </Link>
           </div>
         </section>
 
@@ -216,9 +213,9 @@ const Home = () => {
         </section>
       </main>
 
-      <div className="lg:hidden absolute bottom-[10%] left-1/2 -translate-x-1/2 z-30 animate-swing origin-bottom text-paper">
+      <footer className="lg:hidden absolute bottom-[10%] left-1/2 -translate-x-1/2 z-30 animate-swing origin-bottom text-paper">
         <MdSwipe className="" />
-      </div>
+      </footer>
 
       <Popup message={popupMessage} onClose={handleClosePopup} />
     </div>
