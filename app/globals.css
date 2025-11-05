@@ -7,6 +7,8 @@
   --text-primary: #d0faff;
   --text-secondary: #ffffff;
   --text-button: #4c489d;
+  --font-button: var(--font-tech);
+  --font-title: var(--font-tech);
 }
 
 .theme-explore {
@@ -16,6 +18,8 @@
   --text-primary: #4c489d; /* bleu #004b9c; */
   --text-secondary: #000000;
   --text-button: #d0faff;
+  --font-button: var(--font-explore);
+  --font-title: var(--font-explore);
 }
 
 @theme inline {
@@ -25,9 +29,8 @@
   --color-secondary: var(--text-secondary);
   --color-accent: var(--accent);
   --color-button: var(--text-button);
-
-  --font-displayTech: var(--font-space-grotesk);
-  --font-displayExplore: var(--font-playfair);
+  --font-button: var(--font-button);
+  --font-title: var(--font-title);
 }
 
 body {

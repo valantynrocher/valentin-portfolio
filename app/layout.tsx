@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Playfair_Display } from "next/font/google";
+import { Inter, Major_Mono_Display, Chelsea_Market } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,16 +8,18 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const techFont = Major_Mono_Display({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-space-grotesk",
+  variable: "--font-tech",
+  weight: "400",
 });
 
-const playfair = Playfair_Display({
+const exploreFont = Chelsea_Market({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
+  variable: "--font-explore",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-full overflow-hidden">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${playfair.variable} h-full overflow-hidden`}
+        className={`${inter.variable} ${techFont.variable} ${exploreFont.variable} h-full overflow-hidden`}
       >
         {children}
       </body>
