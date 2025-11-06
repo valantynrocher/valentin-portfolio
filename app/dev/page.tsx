@@ -6,20 +6,31 @@ import { MdSend, MdDownload } from "react-icons/md";
 const DevPage = () => {
   return (
     <>
-      <section id="presentation" className="pt-40">
+      <section
+        id="presentation"
+        aria-label="Présentation du développeur"
+        className="pt-40"
+      >
         <div className="px-14 flex flex-wrap items-center">
-          <div className="w-full lg:w-1/2 flex flex-col text-center lg:text-left">
-            <h1 className="text-1xl sm:text-2xl lg:text-3xl font-title text-primary mb-5">
+          <div className="w-full lg:w-1/2 flex flex-col text-center lg:text-left text-primary">
+            <h1 className="text-1xl sm:text-2xl lg:text-3xl font-title  mb-5">
               développeur au service de <br className="hidden sm:inline" />
               <DynamicWords
                 words={["votre métier", "vos utilisateurs", "vos process"]}
               />
             </h1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
-              optio maiores odit dolor laborum totam, excepturi eligendi, ut hic
-              eaque, fugiat in. Ullam error sequi nisi, eaque tempora aliquid
-              accusantium?
+            <p className="mb-10 text-primary">
+              Développeur front-end spécialisé{" "}
+              <span className="font-bold">React</span> et{" "}
+              <span className="font-bold">TypeScript</span>, je transforme vos{" "}
+              <span className="font-bold">problématiques métier</span> complexes
+              en applications web fiables et performantes. Je m'investis de la
+              conception d'
+              <span className="font-bold">architectures modulaires</span> à
+              l'instauration d'une{" "}
+              <span className="font-bold">culture du test</span>
+              pour garantir des solutions durables, centrées sur vos
+              <span className="font-bold">utilisateurs</span>.
             </p>
             <div className="flex gap-4">
               <a
