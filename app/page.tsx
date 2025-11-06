@@ -1,90 +1,12 @@
 "use client";
+import Logo from "@/components/layout/Logo";
+import SocialLinks from "@/components/layout/SocialLinks";
 import { Popup } from "@/components/Popup";
 import valentinPortrait from "@/public/valentin-portrait.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import {
-  MdEmail,
-  MdHandshake,
-  MdOutlineExplore,
-  MdSwipe,
-} from "react-icons/md";
-
-const Logo = ({ className = "" }: { className?: string }) => (
-  <h2
-    className={
-      className + " text-2xl lg:text-3xl font-title text-[var(--bg-default)]"
-    }
-  >
-    <span className="font-bold">V</span>alentin
-    <br />
-    <span className="font-bold">R</span>ocher
-  </h2>
-);
-
-const ExternalLinks = (props: {
-  classes?: {
-    root?: string;
-    link?: string;
-    icon?: string;
-  };
-}) => {
-  const classes = {
-    root: props.classes?.root || "",
-    icon: props.classes?.icon || "",
-    link: props.classes?.link || "",
-  };
-  return (
-    <div className={classes.root + " flex gap-[15px] lg:gap-[30px]"}>
-      <a
-        href="https://www.linkedin.com/in/valentin-rocher/"
-        target="_blank"
-        className={
-          classes.link +
-          " pointer-events-auto flex h-6 w-6 items-center justify-center bg-[var(--bg-default)] lg:h-8 lg:w-8"
-        }
-      >
-        <FaLinkedin
-          size={16}
-          className={
-            classes.icon + " lg:size-[20px] text-[var(--text-primary)]"
-          }
-        />
-      </a>
-      <a
-        href="https://github.com/valantynrocher"
-        target="_blank"
-        className={
-          classes.link +
-          " pointer-events-auto flex h-6 w-6 items-center justify-center bg-[var(--bg-default)] lg:h-8 lg:w-8"
-        }
-      >
-        <FaGithub
-          size={16}
-          className={
-            classes.icon + " lg:size-[20px] text-[var(--text-primary)]"
-          }
-        />
-      </a>
-      <a
-        href="mailto:valentinrocher@mailo.com"
-        className={
-          classes.link +
-          " pointer-events-auto flex h-6 w-6 items-center justify-center bg-[var(--bg-default)] lg:h-8 lg:w-8"
-        }
-      >
-        <MdEmail
-          size={16}
-          className={
-            classes.icon + " lg:size-[20px] text-[var(--text-primary)]"
-          }
-        />
-      </a>
-    </div>
-  );
-};
+import { MdHandshake, MdOutlineExplore, MdSwipe } from "react-icons/md";
 
 const Home = () => {
   const [theme, setTheme] = useState("tech");
@@ -123,7 +45,7 @@ const Home = () => {
       <header className="lg:hidden pointer-events-none absolute inset-0 z-20 flex flex-col p-14 pb-30">
         <div className="flex w-full items-center justify-between">
           <Logo />
-          <ExternalLinks
+          <SocialLinks
             classes={{
               link: `${theme === "explore" ? "rounded-full" : ""}`,
             }}
@@ -137,7 +59,7 @@ const Home = () => {
           <Image
             src={valentinPortrait}
             alt="Portrait de Valentin"
-            className="w-auto h-full absolute w-auto left-0 right-0 bottom-[-8%] mx-auto"
+            className="absolute h-full w-auto left-0 right-0 bottom-[-8%] mx-auto"
           />
         </div>
       </header>
@@ -181,7 +103,7 @@ const Home = () => {
 
         {/* Explore Section */}
         <section className="relative w-full flex-shrink-0 lg:w-1/2 h-full p-14 pb-30 bg-gradient-to-b from-[var(--bg-paper)] from-15% to-[var(--bg-default)] theme-explore flex flex-col justify-end lg:justify-between items-center lg:items-end snap-center">
-          <ExternalLinks
+          <SocialLinks
             classes={{
               root: "hidden lg:flex theme-explore",
               link: "rounded-full",

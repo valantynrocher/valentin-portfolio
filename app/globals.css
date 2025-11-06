@@ -6,7 +6,8 @@
   --accent: #ffdc00;
   --text-primary: #d0faff;
   --text-secondary: #ffffff;
-  --text-button: #4c489d;
+  --text-accent: var(--accent);
+  --text-button: var(--bg-default);
   --font-button: var(--font-tech);
   --font-title: var(--font-tech);
 }
@@ -17,7 +18,8 @@
   --accent: #c12f62;
   --text-primary: #4c489d; /* bleu #004b9c; */
   --text-secondary: #000000;
-  --text-button: #d0faff;
+  --text-accent: var(--accent);
+  --text-button: var(--bg-default);
   --font-button: var(--font-explore);
   --font-title: var(--font-explore);
 }
@@ -32,6 +34,16 @@
       transform: rotate(20deg);
     }
   }
+
+  @keyframes blinking {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
 }
 
 @theme inline {
@@ -44,6 +56,7 @@
   --font-button: var(--font-button);
   --font-title: var(--font-title);
   --animate-swing: swing 1s ease-in-out infinite;
+  --animate-blinking: blinking 0.8s step-end infinite;
 }
 
 body {
@@ -60,4 +73,8 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.header {
+  padding-block: calc(var(--spacing) * 14);
 }
