@@ -70,7 +70,7 @@ const ExperiencesSectionComponent = () => {
       id="experiences"
       title="eXpériences"
       classes={{
-        section: "relative py-16",
+        section: "relative",
       }}
     >
       <div className="relative">
