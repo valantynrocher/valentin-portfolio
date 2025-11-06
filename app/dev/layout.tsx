@@ -35,6 +35,11 @@ const DevLayout = ({
                 </Link>
               </li>
               <li>
+                <Link href="#experiences" className="hover:text-accent">
+                  expériences
+                </Link>
+              </li>
+              <li>
                 <Link href="#projets" className="hover:text-accent">
                   projets
                 </Link>
@@ -49,12 +54,12 @@ const DevLayout = ({
           <SocialLinks />
         </div>
       </header>
-
       {children}
-
       <footer className="pt-14 lg:pt-[130px]">
         <div className="px-10">
-          <p>© 2025 Valentin Rocher. Tous droits réservés.</p>
+          <p className="w-full text-center text-sm text-[var(--bg-paper)]">
+            © 2025 Valentin Rocher. Tous droits réservés.
+          </p>
         </div>
       </footer>
     </div>
