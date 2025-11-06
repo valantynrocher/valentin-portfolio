@@ -61,7 +61,7 @@ const DynamicWords: React.FC<DynamicWordsProps> = ({ words }) => {
       {/* 1. L'animation visuelle */}
       <span aria-hidden="true">
         <span className="text-accent">{displayedText}</span>
-        <span className="animate-blink text-accent">|</span>
+        <span className="animate-blinking text-accent">|</span>
       </span>
 
       {/* 2. Le contenu pour SEO et Accessibilité */}
