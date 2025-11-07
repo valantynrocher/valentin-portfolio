@@ -6,8 +6,6 @@
   --accent: #ffdc00;
   --text-primary: #d0faff;
   --text-secondary: #ffffff;
-  --text-accent: var(--accent);
-  --text-button: var(--bg-default);
   --font-button: var(--font-tech);
   --font-title: var(--font-tech);
 }
@@ -18,8 +16,6 @@
   --accent: #c12f62;
   --text-primary: #4c489d; /* bleu #004b9c; */
   --text-secondary: #000000;
-  --text-accent: var(--accent);
-  --text-button: var(--bg-default);
   --font-button: var(--font-explore);
   --font-title: var(--font-explore);
 }
@@ -52,7 +48,7 @@
   --color-primary: var(--text-primary);
   --color-secondary: var(--text-secondary);
   --color-accent: var(--accent);
-  --color-button: var(--text-button);
+  --color-button: var(--bg-default);
   --font-button: var(--font-button);
   --font-title: var(--font-title);
   --animate-swing: swing 1s ease-in-out infinite;
@@ -64,6 +60,10 @@ body {
   color: var(--color-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: var(--font-inter), sans-serif;
+}
+
+p {
+  line-height: calc(var(--spacing) * 7);
 }
 
 .no-scrollbar::-webkit-scrollbar {

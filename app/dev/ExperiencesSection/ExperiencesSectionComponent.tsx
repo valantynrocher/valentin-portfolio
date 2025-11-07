@@ -1,9 +1,9 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import { ExperienceSummary } from "@/types/experience";
 import DevSectionComponent from "@/components/dev/DevSection";
+import Button from "@/components/ui/Button";
 
 const EXPERIENCES_SUMMARIES: ExperienceSummary[] = [
   {
@@ -80,7 +80,7 @@ const ExperiencesSectionComponent = () => {
         />
         {displayedExperiences.map((experience, index) => (
           <div
-            key={experience.slug}
+            key={experience.role}
             className={`relative mb-8 pl-8 md:pl-0 flex justify-between items-center w-full ${
               index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
             } flex-row-reverse`}
@@ -106,7 +106,7 @@ const ExperiencesSectionComponent = () => {
                 {experience.slug ? (
                   <Link
                     href={`/dev/experience/${experience.slug}`}
-                    className="text-sm font-button text-accent mt-4 hover:underline"
+                    className="text-sm font-button text-secondary mt-4 hover:text-accent"
                   >
                     plus de détails
                   </Link>
@@ -118,12 +118,9 @@ const ExperiencesSectionComponent = () => {
       </div>
       {EXPERIENCES_SUMMARIES.length > 4 && (
         <div className="text-center mt-8">
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="px-6 py-2 font-button text-accent border border-accent"
-          >
+          <Button variant="outlined" onClick={() => setIsExpanded(!isExpanded)}>
             {isExpanded ? "réduire" : "afficher tout"}
-          </button>
+          </Button>
         </div>
       )}
     </DevSectionComponent>

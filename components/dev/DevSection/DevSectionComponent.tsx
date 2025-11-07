@@ -13,7 +13,7 @@ const DevSectionComponent = ({
       className={`relative pt-20 ${classes?.section || ""}`}
       {...slotProps?.section}
     >
-      <div className="px-14 lg:px-10 xl:px-20">
+      <div className="px-14 lg:px-10 xl:px-20 flex flex-col h-full justify-center">
         {title ? (
           <h2 className="text-3xl text-center lg:text-4xl font-title mb-14 lg:mb-10 text-primary">
             {title}
